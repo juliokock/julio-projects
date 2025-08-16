@@ -1,0 +1,38 @@
+    #!/usr/bin/env python3
+"""
+This script serves as a starting point for AI/ML projects.
+
+Usage:
+    python ai_starter.py
+
+This script demonstrates a simple setup by generating a small dataset and splitting it into training and testing sets.
+Feel free to modify and expand it for your AI experiments.
+"""
+
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+
+def main():
+    """Main function demonstrating a basic dataset split."""
+    # Generate a simple numeric dataset
+    data = np.arange(20)
+    labels = data * 2  # Dummy labels for demonstration
+
+    # Reshape data for compatibility with scikit-learn
+    data = data.reshape(-1, 1)
+
+    # Split the dataset into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(
+        data, labels, test_size=0.2, random_state=42
+    )
+
+    print("Training data:", X_train)
+    print("Test data:", X_test)
+    
+    # TODO: Add your AI model training and evaluation code here
+
+
+if __name__ == '__main__':
+    main()
